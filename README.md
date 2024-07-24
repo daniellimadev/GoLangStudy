@@ -93,3 +93,75 @@
 - a = int(b)
 - ref/spec#Conversions
 - End of session. Congratulations! Tips, motivation and exercises.
+
+### Boolean type
+
+- Now let's explore the types in more detail. golang.org/ref/spec. Starting with bool.
+- The bool type is a binary type, which can only contain one of two values: true and false. (True or false, yes or no, zero or one, etc.)
+- Whenever you see relational operators (==, <=, >=, !=, <, >), the result of the expression will be a Boolean value.
+- Booleans are fundamental in decision making in conditional logic, switch statements, if statements, control flow, etc.
+
+ ### Numeric types
+
+- int vs. float: Integers vs. numbers with fractions.
+- golang.org/ref/spec → numeric types
+- Integers:
+ - Integers
+ - int & uint → “implementation-specific sizes”
+ - All numeric types are distinct, except:
+ - byte = uint8
+ - rune = int32 (UTF8)
+ (The Go language source code is always in UTF-8).
+ - Types are unique
+ - Go is a static language
+ - int and int32 are not the same thing
+ - To "mix" them, conversion is necessary
+ - General rule: use only int
+- Floating point:
+ - Rational or real numbers
+ - General rule: only use float64
+
+### String type (character strings)
+
+- Strings are sequences of bytes.
+- Immutable.
+- A string is a "slice of bytes" (or, in Portuguese, a slice of bytes).
+- In practice:
+ - %v %T
+ - Raw string literals
+ - Conversion to slice of bytes: []byte(x)
+ - %#U, %#x
+
+### Number systems
+
+- Base-10: decimal, 0–9
+- Base-2: binary, 0–1
+- Base-16: hexadecimal, 0–f
+
+### Constants
+
+- These are immutable values.
+- They can be typed or not:
+ - const hi = "Good morning"
+ - const hi string = "Good morning"
+- Untyped ones will only have a type assigned to them when they are used.
+ - Ex. what type of 42? int? uint? float64?
+ - In other words, it is convenient flexibility.
+- In practice: int, float, string.
+ - const x = y
+ -const(x=y)
+
+### Iota
+
+- golang.org/ref/spec
+- In a constant declaration, the iota identifier represents sequential numbers.
+- In practice.
+ - iota, iota + 1, a = iota b c, restarts on each const, _
+
+### Bit-Shift
+
+- Bit shifting is when we shift binary digits to the left or right.
+- In practice:
+ - %d %b
+ - x << y
+ - iota * 10 << 10 = kb, mb, gb
