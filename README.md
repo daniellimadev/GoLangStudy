@@ -165,3 +165,103 @@
  - %d %b
  - x << y
  - iota * 10 << 10 = kb, mb, gb
+
+ ### Understanding control flow
+
+- Computers read programs in a certain way, in the same way that we read books, for example, in a certain way.
+- When we Westerners read books, we read from front to back, from left to right, from top to bottom.
+- Computers read from top to bottom.
+- In other words, its reading is sequential. This is called sequential control flow.
+- In addition to sequential control flow, there are two statements that can affect how the computer reads code:
+ - One of them is the loop control flow. In this case, the computer will repeat reading the same code in a specific way. Repetitive control flow is also known as iterative control flow.
+ - And the other is the conditional control flow, or selection control flow. In this case, the computer finds a condition and, through an if or switch statement, takes one course or another depending on that condition.
+- In other words, there are three types of control flow: sequential, repetition and conditional.
+
+ - Sequential
+ - Iterative (loop)
+ - for: initialization, condition, post
+ - for: hierarchically
+ - for: condition ("while")
+ - for: ...ever?
+ -for:break
+ - for: continue
+ - Conditional
+ - switch/case/default statements
+ - there is no fall-through by default
+ - creating fall-through
+ - default
+ - multiple cases
+ - cases can be expressions
+ - if they result in true, run
+ - type
+ -if
+ - bool
+ - the "!" operator
+ - initialization declaration
+ - if, else
+ - if, else if, else
+ - if, else if, else if, ..., else
+
+### Loops: initialization, condition, post
+
+-For
+ - Startup, condition, post
+ - Semicolon?
+ - gobyexample.com
+ - There is no while!
+
+### Loops: nested loop (hierarchical repetition)
+
+-For
+ - Hierarchical repetition
+ - Examples: clock, calendar
+
+### Loops: the for statement
+
+- For: initialization, condition, post
+- For: condition ("while")
+- For: ...ever? (httpservers)
+- For: break
+- golang.org/ref/spec#For_statements, Effective Go
+- (Range comes further forward.)
+
+### Loops: break & continue
+
+- Module operation: %
+- For: break
+- For: continue
+
+### Conditionals: the if statement
+
+- If: bool
+- If: the operator does not → "!"
+- If: initialization statement
+
+### Conditionals: if, else if, else
+
+- If, else.
+- If, else if, else.
+- If, else if, else if, ..., else.
+
+### Conditionals: the switch statement
+
+- Switch:
+ - can evaluate an expression
+ - switch statement == case (value)
+ - default switch statement == true (bool)
+ - there is no fall-through by default
+ - creating fall-through
+ - default
+ - composite cases
+
+### Conditional logical operators
+
+- &&
+- ||
+- !
+- What is the result of fmt.Println...
+ - true && true
+ - true && false
+ - true || true
+ - true || false
+ - !true
