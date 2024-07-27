@@ -265,3 +265,38 @@
  - true || true
  - true || false
  - !true
+
+ ### Array
+
+- Data structures, or data groups, allow us to group different values. These values ​​may or may not be of the same type.
+- The structures we will see are: arrays, slices, structs and maps.
+- Let's start with arrays. Arrays in Go are a foundation, and not something we use every day.
+- Their size must be present in the declaration: var x [n]int
+- Values ​​are assigned to their positions with: x[i] = y (0-based)
+- To see the size, use: len(x)
+- ref/spec: "The length is part of the array's type" → [5]int != [6]int
+- Effective Go: Arrays are useful for [some things we will never do] and serve as a foundation for slices. Use slices instead of arrays.
+
+### Slice: Composite literal
+
+- What are composite data types?
+- Wikipedia: Composite_data_type
+- Effective Go: Composite literals
+- ref/spec: Composite literals
+- A slice groups values ​​of a single type.
+- Creating a slice: composite literal → x := []type{values}
+
+### Maps:
+
+- Uses the key:value format.
+- E.g. name and phone
+- Excellent performance for lookups.
+- map[key]value{ key: value }
+- Access: m[key]
+- Key without value returns zero. This can cause problems.
+- To check: comma ok idiom.
+- v, ok := m[key]
+- ok is a boolean, true/false
+- In practice: if v, ok := m[key]; ok { }
+- To add an item: m[v] = value
+- Maps *have no order.*
