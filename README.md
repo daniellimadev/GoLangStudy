@@ -300,3 +300,45 @@
 - In practice: if v, ok := m[key]; ok { }
 - To add an item: m[v] = value
 - Maps *have no order.*
+
+### Struct
+
+- Struct is a composite data type that allows us to store values ​​of *different* types.
+- Its name comes from "structure," or structure.
+- Declaration: type x struct { y: z }
+- Access: x.y
+
+### Embedded structs
+
+- Structs inside structs inside structs.
+- Example: a Formula 1 driver is a person (name, surname, age) *and also* a competitor (name, team, points).
+
+### Reading the documentation
+
+- It is important to familiarize yourself with the Go language documentation.
+- In this video we will see a little about what the documentation says about structs.
+- We will see:
+- ref/spec
+- We have already seen more than half of the types in Go!
+- Struct types.
+- x, y int
+- anonymous fields
+- promoted fields
+
+### Anonymous structs
+
+- These are structs without identifiers.
+- x := struct { name type }{ name: value }
+
+### Functions
+
+- What are functions useful for?
+- Abstracting functionality
+- Code reuse
+- func (receiver) identifier(parameters) (returns) { code }
+- The difference between parameters and arguments:
+- Functions are defined with parameters
+- Functions are called with arguments
+- Everything in Go is *pass by value.*
+- Pass by reference, pass by copy, ... no.
+- Parameters can be ... variadic.
