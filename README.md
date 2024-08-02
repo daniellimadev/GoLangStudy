@@ -342,3 +342,29 @@
 - Everything in Go is *pass by value.*
 - Pass by reference, pass by copy, ... no.
 - Parameters can be ... variadic.
+
+### Defer
+
+- Functions are great because they make our code modular. We can change parts of our program without affecting the rest!
+- A defer statement calls a function whose execution will occur when the function it is part of finishes.
+- This finish can occur due to a return, at the end of the function's code block, or in the case of a panic in a corresponding goroutine.
+- "Leave it for the last minute!"
+- ref/spec
+- We always use it to close a file after opening it.
+
+### Methods
+
+- A method is a function attached to a type.
+- When you attach a function to a type, it becomes a method of that type.
+- You can attach a function to a type using its receiver.
+- Usage: value.method()
+- Example: the type "person" can have a method goodmorning()
+
+### Interfaces & polymorphism
+
+- In Go, values ​​can have more than one type.
+- An interface allows a value to have more than one type.
+- Declaration: keyword identifier type → type x interface
+- After declaring the interface, you must define the methods needed to implement that interface.
+- If a type has all the required methods (which, in the case of interface{}, can be none) then that type implicitly implements the interface.
+- That type will be your type *and also* the type of the interface.
