@@ -368,3 +368,21 @@
 - After declaring the interface, you must define the methods needed to implement that interface.
 - If a type has all the required methods (which, in the case of interface{}, can be none) then that type implicitly implements the interface.
 - That type will be your type *and also* the type of the interface.
+
+### Pointers
+
+- All values ​​are stored in memory.
+- Every location in memory has an address.
+- A pointer refers to that address.
+- Notations:
+- &variable shows the address of a variable
+- %T: variable vs. &variable
+- *variable de-references, shows the value that is at that address
+- ????: *&var works!
+- *type is a type that contains the address of a value of type type, in this case * is not an operator
+
+### When to use pointers
+
+- Pointers allow you to share memory addresses. This is useful when:
+- We don't want to pass large amounts of data back and forth
+- We want to change a value in its original location (everything in Go is pass by value!)
