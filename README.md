@@ -413,3 +413,20 @@ type element[T any] struct {
 ```
 - We can define methods on generic types just like we do on regular types, but we have to keep the type parameters in place. The type is List[T], not List.
 
+### Packages
+
+- Packages are the basic unit of code organization in Go. A package is a collection of Go files that are organized into a specific directory. All files in the same directory belong to the same package.
+
+- Each Go file begins with a package declaration, such as package main or package fmt. The package declaration defines the name of the package to which the file belongs.
+
+- Packages allow you to group related functions, types, and variables. This makes it easier to reuse code and improves project organization.
+
+- The main package is special because it defines the entry point of a Go program. A Go project that is intended to be run as a program must have a main package with a main() function.
+
+### Modules
+
+- Módulos são uma maneira de organizar e gerenciar dependências em projetos Go. Um módulo é uma coleção de pacotes que são versionados juntos. Um módulo é definido por um arquivo go.mod na raiz do diretório do projeto.
+
+- O go.mod especifica o nome do módulo, bem como as dependências externas que ele usa. Isso facilita o gerenciamento de versões e a resolução de dependências.
+
+- Com módulos, você pode importar pacotes de outros projetos (tanto locais quanto remotos) e controlar a versão das dependências.
