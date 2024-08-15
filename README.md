@@ -425,8 +425,8 @@ type element[T any] struct {
 
 ### Modules
 
-- Módulos são uma maneira de organizar e gerenciar dependências em projetos Go. Um módulo é uma coleção de pacotes que são versionados juntos. Um módulo é definido por um arquivo go.mod na raiz do diretório do projeto.
+- Modules are a way to organize and manage dependencies in Go projects. A module is a collection of packages that are versioned together. A module is defined by a go.mod file in the root of the project directory.
 
-- O go.mod especifica o nome do módulo, bem como as dependências externas que ele usa. Isso facilita o gerenciamento de versões e a resolução de dependências.
+- The go.mod file specifies the name of the module, as well as the external dependencies it uses. This makes version management and dependency resolution easier.
 
-- Com módulos, você pode importar pacotes de outros projetos (tanto locais quanto remotos) e controlar a versão das dependências.
+- With modules, you can import packages from other projects (both local and remote) and version control their dependencies.
