@@ -430,3 +430,86 @@ type element[T any] struct {
 - The go.mod file specifies the name of the module, as well as the external dependencies it uses. This makes version management and dependency resolution easier.
 
 - With modules, you can import packages from other projects (both local and remote) and version control their dependencies.
+
+### Compiling Project
+
+#### 1. Compiling a Single Go File
+
+- If you have a single Go file (e.g. `main.go`), you can compile it directly using the `go build` command.
+
+- Steps:
+1. Navigate to the directory where your `main.go` file is located.
+
+2. Run the command:
+
+```
+go build
+```
+
+- This will generate an executable in the same directory with the name of the Go file (e.g. `main.exe` on Windows or `main` on Linux/Mac).
+
+#### 3. To run the generated binary, use:
+
+```
+./main
+```
+
+- or on Windows
+
+```
+main.exe
+```
+
+#### 2. Building a Project with Multiple Files/Packages
+
+- If your project has multiple Go files or is organized into packages, you can use the same `go build` command, but with some additional considerations.
+
+- Steps:
+1. Make sure you are in the root directory of your project, where the `go.mod` file is located (if the project is modular).
+
+2. Run the command:
+
+```
+go build
+```
+
+- Go will build the entire project, including all Go packages and files. This will generate a single binary in the root directory.
+
+3. To run the generated binary, use the same procedure mentioned above.
+
+#### 3. Compiling with Binary Name Specification
+
+- You can specify the name of the generated binary using the -o flag.
+
+Example:
+
+```
+go build -o my_program
+```
+- This will create a binary named my_program instead of using the default name.
+
+#### 4. Cross Compilation
+- Go allows you to compile your code for different operating systems and CPU architectures.
+
+ Example:
+
+- To compile for Linux on a Windows machine, you can use:
+
+```
+GOOS=windows GOARCH=amd64 go build -o my_program_windows.exe
+```
+
+#### 5. Running the Project Without Compiling Beforehand
+
+- If you just want to run the project without generating a persistent binary, use the command:
+
+```
+go run main.go
+```
+or
+```
+go run .
+```
+
+- This command compiles and executes the code in a single step.
+
