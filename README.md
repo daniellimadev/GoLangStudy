@@ -513,3 +513,9 @@ go run .
 
 - This command compiles and executes the code in a single step.
 
+
+### File Manipulation
+
+- Manipulating files in Go is a common task and involves operations like reading, writing, creating, and deleting files.
+- Go provides a standard library called filemanagement that provides functions to perform these operations.
+- I will show you some basic examples of file manipulation in Go.
