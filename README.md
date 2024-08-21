@@ -519,3 +519,11 @@ go run .
 - Manipulating files in Go is a common task and involves operations like reading, writing, creating, and deleting files.
 - Go provides a standard library called filemanagement that provides functions to perform these operations.
 - I will show you some basic examples of file manipulation in Go.
+
+### Making HTTP call
+
+- In Go, you can perform HTTP operations using the net/http package, which provides full support for building HTTP clients and servers.
+
+### JSON
+
+- Working with JSON in Go is very common, especially when dealing with APIs or structured data. The encoding/json package is the primary tool for encoding and decoding JSON in Go.
