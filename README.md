@@ -527,3 +527,19 @@ go run .
 ### JSON
 
 - Working with JSON in Go is very common, especially when dealing with APIs or structured data. The encoding/json package is the primary tool for encoding and decoding JSON in Go.
+
+### Testing
+
+- Testing in Golang (Go) is straightforward and built into the language. Go has its own testing framework in the standard library, called `testing`, which simplifies the process of writing and running unit tests and benchmarks.
+
+- Commands to run the tests:
+
+    ```bash
+    go test .
+    ```
+
+    and
+
+    ```bash
+    go test -v
+    ```
