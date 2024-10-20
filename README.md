@@ -392,25 +392,25 @@
 - Starting with version 1.18, Go has added support for generics, also known as type parameters.
 
 - As an example of a generic function, MapKeys takes a map of any type and returns a slice of its keys. This function has two type parameters - K and V; K has the comparable constraint, meaning that we can compare values of this type with the == and != operators. This is required for map keys in Go. V has the any constraint, meaning that it’s not restricted in any way (any is an alias for interface{}).
-```
-func MapKeys[K comparable, V any](m map[K]V) []K {
-    r := make([]K, 0, len(m))
-    for k := range m {
-        r = append(r, k)
+    ```
+    func MapKeys[K comparable, V any](m map[K]V) []K {
+        r := make([]K, 0, len(m))
+        for k := range m {
+            r = append(r, k)
+        }
+        return r
     }
-    return r
-}
-```
+    ```
 - As an example of a generic type, List is a singly-linked list with values of any type.
-```
-type List[T any] struct {
-    head, tail *element[T]
-}
-type element[T any] struct {
-    next *element[T]
-    val  T
-}
-```
+    ```
+    type List[T any] struct {
+        head, tail *element[T]
+    }
+    type element[T any] struct {
+        next *element[T]
+        val  T
+    }
+    ```
 - We can define methods on generic types just like we do on regular types, but we have to keep the type parameters in place. The type is List[T], not List.
 
 ### Packages
@@ -442,9 +442,9 @@ type element[T any] struct {
 
 2. Run the command:
 
-```
-go build
-```
+    ```
+    go build
+    ```
 
 - This will generate an executable in the same directory with the name of the Go file (e.g. `main.exe` on Windows or `main` on Linux/Mac).
 
@@ -469,9 +469,9 @@ main.exe
 
 2. Run the command:
 
-```
-go build
-```
+    ```
+    go build
+    ```
 
 - Go will build the entire project, including all Go packages and files. This will generate a single binary in the root directory.
 
@@ -483,9 +483,9 @@ go build
 
 Example:
 
-```
-go build -o my_program
-```
+    ```
+    go build -o my_program
+    ```
 - This will create a binary named my_program instead of using the default name.
 
 #### 4. Cross Compilation
@@ -495,21 +495,22 @@ go build -o my_program
 
 - To compile for Linux on a Windows machine, you can use:
 
-```
-GOOS=windows GOARCH=amd64 go build -o my_program_windows.exe
-```
+    ```
+    GOOS=windows GOARCH=amd64 go build -o my_program_windows.exe
+    ```
 
 #### 5. Running the Project Without Compiling Beforehand
 
 - If you just want to run the project without generating a persistent binary, use the command:
 
-```
-go run main.go
-```
-or
-```
-go run .
-```
+    ``` bash
+    go run main.go
+    ```
+    or
+
+    ``` bash
+    go run .
+    ```
 
 - This command compiles and executes the code in a single step.
 
@@ -542,4 +543,39 @@ go run .
 
     ```bash
     go test -v
+    ```
+
+### Testing batch
+
+- Testing batch processing in Go can be more complex compared to single function/unit tests, as it involves verifying how a group of tasks or data items are handled together. Batch processes often involve handling collections of data, performing tasks asynchronously, or executing them over time.
+
+### Code coverage
+
+- Code coverage in Go refers to how much of your codebase is exercised when you run your tests. It helps you understand which parts of your code are tested and which are not, guiding you to write more comprehensive tests. Go provides built-in support for measuring and reporting code coverage using the ``go test` command.
+
+- Steps to Measure Code Coverage in Go:
+
+1. Basic Code Coverage
+To check the code coverage for your Go tests, use the `-cover` flag with the `go test` command:
+
+    ``` bash
+    go test -cover
+    ```
+
+- This will output a percentage showing how much of the code is covered by your tests.
+
+2. Generating a Coverage Report
+
+- If you want a detailed report, you can use the -coverprofile flag to generate a coverage file:
+
+    ``` bash
+    go test -coverprofile=coverage.out
+    ```
+- This generates a file named `coverage.out` that contains the coverage information for each function in your code.
+
+3. Viewing Coverage in HTML
+- You can visualize the coverage by converting the coverage.out file to an HTML report:
+
+    ``` bash
+    go tool cover -html=coverage.out
     ```
