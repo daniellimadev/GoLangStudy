@@ -551,7 +551,7 @@ Example:
 
 ### Code coverage
 
-- Code coverage in Go refers to how much of your codebase is exercised when you run your tests. It helps you understand which parts of your code are tested and which are not, guiding you to write more comprehensive tests. Go provides built-in support for measuring and reporting code coverage using the ``go test` command.
+- Code coverage in Go refers to how much of your codebase is exercised when you run your tests. It helps you understand which parts of your code are tested and which are not, guiding you to write more comprehensive tests. Go provides built-in support for measuring and reporting code coverage using the `go test` command.
 
 - Steps to Measure Code Coverage in Go:
 
@@ -578,4 +578,18 @@ To check the code coverage for your Go tests, use the `-cover` flag with the `go
 
     ``` bash
     go tool cover -html=coverage.out
+    ```
+
+### Testing Benchmarking
+
+- To measure performance, you can use benchmarks in Go. They have the signature `func BenchmarkXxx(b *testing.B)` and can be run with the command:
+
+    ``` bash
+    go test -bench=.
+    ```
+
+    Or
+
+    ``` bash
+    go test -bench .
     ```
